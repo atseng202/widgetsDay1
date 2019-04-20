@@ -107,9 +107,33 @@ table {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin-bottom: 20px;
 }
 
 .weather > p {
 	text-align: center;
 }
 
+/* Autocomplete Widget */
+.autocomplete-container {
+	border: 1px solid darkblue;
+	background-color: turquoise;
+	color: white;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.autocomplete-container > input {
+	width: 75%;
+	margin: 10px auto;
+}
+
+.autocomplete-container > ul {
+	margin: 0 auto;
+}
+.autocomplete-container li:hover {
+	cursor: pointer;
+}

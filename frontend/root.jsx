@@ -20,6 +20,7 @@ class Root extends React.Component {
           { title: 'Tab 3', content: 'Pane 3' }
         ]} />
         <Weather></Weather>
+        <Autocomplete names={["Abba", "Barney", "Barbara", "Jeff", "Jenny", "Sarah", "Sally", "Xander"]}></Autocomplete>
       </div>
     );
   }
