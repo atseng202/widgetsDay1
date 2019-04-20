@@ -1,6 +1,7 @@
 import React from 'react';
 import Tabs from './tabs';
 import Clock from './clock';
+import Weather from './weather';
 
 class Root extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Root extends React.Component {
           { title: 'Tab 2', content: 'Pane 2' },
           { title: 'Tab 3', content: 'Pane 3' }
         ]} />
+        <Weather />
       </div>
     );
   }
