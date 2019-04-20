@@ -23,13 +23,13 @@ class Clock extends React.Component {
     const {time} = this.state;
     const date = time.toString().split(' ').slice(0, 4).join(' ');
     return (
-      <div class="clock">
+      <div className="clock">
         <h1>This is a Clock</h1>
-        <section class="clock_time">
-          <h2 class="clock_header">Time: </h2><p> {time.getHours()}:{time.getMinutes()}:{time.getSeconds()} PDT</p>
+        <section className="clock_time">
+          <h2 className="clock_header">Time: </h2><p> {time.getHours()}:{time.getMinutes()}:{time.getSeconds()} PDT</p>
         </section>
-        <section class="clock_date">
-          <h2 class="clock_header">Date: </h2><p> {date}</p>
+        <section className="clock_date">
+          <h2 className="clock_header">Date: </h2><p> {date}</p>
         </section>
       </div>
     );

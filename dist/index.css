@@ -75,6 +75,7 @@ table {
 	width: 200px;
 	height: 200px;
 	margin: 0 auto;
+	margin-bottom: 20px;
 }
 
 .tabs {
@@ -96,3 +97,17 @@ table {
 	color: white;
 	cursor: pointer;
 }
+
+/* Weather Widget */
+.weather {
+	background-color: green;
+	width: 300px;
+	height: 100px;
+	margin: 0 auto;
+}
+
+.weather > p {
+	text-align: center;
+	padding-top: 30px;
+}
+

@@ -18,7 +18,7 @@ class Root extends React.Component {
           { title: 'Tab 2', content: 'Pane 2' },
           { title: 'Tab 3', content: 'Pane 3' }
         ]} />
-        <Weather />
+        <Weather></Weather>
       </div>
     );
   }

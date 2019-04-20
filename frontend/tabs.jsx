@@ -21,8 +21,8 @@ class Tabs extends React.Component {
     const tabs = this.props.tabs;
     const currentTab = this.state.tabIndex;
     return (
-      <section class="tab-container">
-        <ul class="tabs">
+      <section className="tab-container">
+        <ul className="tabs">
           {tabs.map((el, idx) => <Header callback={this.changeTabIndex} key={idx} idx={idx} title={el.title} />)}
         </ul>
         <article>{tabs[currentTab].content}</article>
