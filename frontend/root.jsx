@@ -2,6 +2,7 @@ import React from 'react';
 import Tabs from './tabs';
 import Clock from './clock';
 import Weather from './weather';
+import Autocomplete from './autocomplete';
 
 class Root extends React.Component {
   constructor(props) {

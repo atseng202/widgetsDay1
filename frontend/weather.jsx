@@ -9,7 +9,8 @@ class Weather extends React.Component {
   }
 
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition(this.posCallback, this.posError, { timeout: 10000 });
+    navigator.geolocation.getCurrentPosition(this.posCallback, this.posError);
+    // { timeout: 10000 }
   }
 
   posError(posErrorObj) {
@@ -23,23 +24,38 @@ class Weather extends React.Component {
     const lat = coordinates.latitude;
     const http = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&APPID=4b6730a7113a2cfdb61269cd7b0ec417`;
 
-    let jsonCB = function (response) {
-      return response.json();
+    // Sending request via XMLHTTPRequest
+    const xHR = new XMLHttpRequest(), 
+      method = 'GET',
+      url = `${http}`;
+    xHR.open(method, url, true);
+    xHR.onload = () => {
+      const data = JSON.parse(xHR.response);
+      let { main: {temp}, name} = data;
+      this.setState({temp: ((parseInt(temp) -32) / 1.8), name})
     };
 
-    let setWeather = function ({ main: { temp }, name }) {
-      this.setState({ temp: ((parseInt(temp) - 32) / 1.8), name });
-    };
+    xHR.send();
 
-    setWeather = setWeather.bind(this);
-    fetch(http).then(jsonCB).then(setWeather);
+    // Sending a request with Fetch API
+    // let jsonCB = function (response) {
+    //   return response.json();
+    // };
+
+    // let setWeather = function ({ main: { temp }, name }) {
+    //   this.setState({ temp: ((parseInt(temp) - 32) / 1.8), name });
+    // };
+
+    // setWeather = setWeather.bind(this);
+    // fetch(http).then(jsonCB).then(setWeather);
   }
 
   render() {
     if (this.state.temp) {
       return (
         <div className="weather">
-          <p>{this.state.temp}ºF, {this.state.name}</p>
+          <p>{this.state.temp}ºF</p>
+          <p>{this.state.name}</p>
         </div>
       );
     } else {
