@@ -61,10 +61,38 @@ table {
 	background-color: orange;
 	color: white;
 	padding: 20px;
+	margin-bottom: 20px;
 }
 
 .clock_time, .clock_date {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.tab-container {
+	border: 1px solid grey;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+}
+
+.tabs {
+	display: flex;
+	justify-content: space-between;
+}
+
+.tabs > h1 {
+	border: 1px solid black;
+}
+
+.tab-container article {
+	text-align: center;
+	padding-top: 80px;
+}
+
+.tabs > h1:hover {
+	background-color: grey;
+	color: white;
+	cursor: pointer;
 }
